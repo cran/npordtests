@@ -1,0 +1,3 @@
+export(FtmTest, GcTest, JtTest, KtpTest, LsTest, MjtTest, RsTest, SsTest, StTest, TmTest, WsTest, LtTest, AtTest)
+importFrom("stats", complete.cases, cor, pnorm, quantile,var)
+importFrom("utils", combn)
