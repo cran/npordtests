@@ -47,6 +47,7 @@ V=0
 
 for (i in 1:(k-1)){
   Ic=combn(Is,i)
+  NIc<-rbind(unname(vector(mode="integer",length = choose(k,i))),Ic)
   for (j in 1:k) ## for (j in l[i+1]:k)
   {
     V1=1
@@ -54,9 +55,9 @@ for (i in 1:(k-1)){
     for (s in 1:k){
       V1=V1*((y.n[s]-1)^I[s])}
     V2=1
-    VV1=choose(2*(k-l[j+1]),k-l[j+1])/factorial(2*k-i)
+    VV1=choose(2*(k-NIc[i+1,j]),k-NIc[i+1,j])/factorial(2*k-i)
     for (s in 1:i)
-      V2=V2*choose(2*(l[s+1]-l[s]-1),l[s+1]-l[s]-1)
+      V2=V2*choose(2*(NIc[s+1,j]-NIc[s,j]-1),(NIc[s+1,j]-NIc[s,j]-1))
     V=V+V1*(VV1*V2-(1/(factorial(k)^2)))
   }
 }
@@ -75,13 +76,13 @@ if (verbose) {
   cat("---------------------------------------------------------","\n", sep = " ")
   cat("  Test :", METHOD, "\n", sep = " ")
   cat("  data :", DNAME, "\n\n", sep = " ")
-  cat(" ",TEST, "statistic =", TM, "\n", sep = " ")
-  cat("  Mean", TEST, "statistic =", ETM, "\n", sep = " ")
-  cat("  Variance of", TEST, "statistic =", VTM, "\n", sep = " ")
-  cat("  Std.", TEST, "statistic =", Z, "\n", sep = " ")
-  cat("  Asymp. p.value (1-tailed) =", p.value, "\n\n", sep = " ")
-  cat(if (p.value > alpha) {"Result     : Null hypothesis is not rejected."}
-      else {"  Result     : Null hypothesis is rejected."}, "\n")
+  cat("  Statistic =", TM, "\n", sep = " ")
+  cat("  Mean =", ETM, "\n", sep = " ")
+  cat("  Variance =", VTM, "\n", sep = " ")
+  cat("  Z =", Z, "\n", sep = " ")
+  cat("  Asymp. p-value =", p.value, "\n\n", sep = " ")
+  cat(if (p.value > alpha) {"  Result : Null hypothesis is not rejected."}
+      else {"  Result : Null hypothesis is rejected."}, "\n")
   cat("---------------------------------------------------------","\n\n", sep = " ")
 }
 

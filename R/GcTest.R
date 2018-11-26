@@ -41,7 +41,7 @@ for (i in 1:(k-1))
       if (max(Xg[,a])<=min(Xh[,b])) Fgh=Fgh+1
       if (min(Xg[,a])>=max(Xh[,b])) Fgh=Fgh-1
     }
-  Gc=Gc+(i*(k-i)/(2*k))*Fgh
+  Gc=Gc+(i*(k-i)/(2*k))*Fgh/(choose(y.n[i],c)*choose(y.n[i+1],c))
 }
 
 EGc=0
@@ -49,7 +49,7 @@ Dc1=0
 
 for (i in c:(2*c-1))
   for (j in c:(2*c-1))
-    Dc1=Dc1+choose((2*c-1),i)*choose((2*c-1),j)/(choose((4*c-2),i+j)*(4*c-2)) ## hata var mı?
+    Dc1=Dc1+choose((2*c-1),i)*choose((2*c-1),j)/(choose((4*c-2),i+j)*(4*c-1))
 
 Dc=-1+4*Dc1
 
@@ -82,13 +82,13 @@ if (verbose) {
   cat("---------------------------------------------------------","\n", sep = " ")
   cat("  Test :", METHOD, "\n", sep = " ")
   cat("  data :", DNAME, "\n\n", sep = " ")
-  cat(" ",TEST, "statistic =", Gc, "\n", sep = " ")
-  cat("  Mean", TEST, "statistic =", EGc, "\n", sep = " ")
-  cat("  Variance of", TEST, "statistic =", VGc, "\n", sep = " ")
-  cat("  Std.", TEST, "statistic =", Z, "\n", sep = " ")
-  cat("  Asymp. p.value (1-tailed) =", p.value, "\n\n", sep = " ")
-  cat(if (p.value > alpha) {"Result     : Null hypothesis is not rejected."}
-      else {"  Result     : Null hypothesis is rejected."}, "\n")
+  cat("  Statistic =", Gc, "\n", sep = " ")
+  cat("  Mean =", EGc, "\n", sep = " ")
+  cat("  Variance =", VGc, "\n", sep = " ")
+  cat("  Z =", Z, "\n", sep = " ")
+  cat("  Asymp. p-value =", p.value, "\n\n", sep = " ")
+  cat(if (p.value > alpha) {"  Result : Null hypothesis is not rejected."}
+      else {"  Result : Null hypothesis is rejected."}, "\n")
   cat("---------------------------------------------------------","\n\n", sep = " ")
 }
 

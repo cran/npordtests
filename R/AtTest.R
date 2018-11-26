@@ -46,13 +46,13 @@ if (verbose) {
   cat("---------------------------------------------------------","\n", sep = " ")
   cat("  Test :", METHOD, "\n", sep = " ")
   cat("  data :", DNAME, "\n\n", sep = " ")
-  cat(" ",TEST, "statistic =", res$statistic, "\n", sep = " ")
-  cat("  Mean", TEST, "statistic =", res$mean, "\n", sep = " ")
-  cat("  Variance of", TEST, "statistic =", res$variance, "\n", sep = " ")
-  cat("  Std.", TEST, "statistic =", res$Z, "\n", sep = " ")
-  cat("  Asymp. p.value (1-tailed) =", res$p.value, "\n\n", sep = " ")
-  cat(if (res$p.value > alpha) {"Result     : Null hypothesis is not rejected."}
-      else {"  Result     : Null hypothesis is rejected."}, "\n")
+  cat("  Statistic =", res$statistic, "\n", sep = " ")
+  cat("  Mean =", res$mean, "\n", sep = " ")
+  cat("  Variance =", res$variance, "\n", sep = " ")
+  cat("  Z =", res$Z, "\n", sep = " ")
+  cat("  Asymp. p-value =", res$p.value, "\n\n", sep = " ")
+  cat(if (res$p.value > alpha) {"  Result : Null hypothesis is not rejected."}
+      else {"  Result : Null hypothesis is rejected."}, "\n")
   cat("---------------------------------------------------------","\n\n", sep = " ")
 }
 

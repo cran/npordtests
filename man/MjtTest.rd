@@ -45,6 +45,8 @@ A list with class "owt" containing the following components:
 Jonckheere, A. R. (1954). A Distribution-Free k-Sample Test Against Ordered Alternatives. \emph{Biometrika}, \bold{41}, 133-145.
 
 Neuhauser, M., Liu, P.Y., Hothorn, L.A.(1998). Nonparametric Tests for Trend: Jonckheere's Test, a Modification and a Maximum Test. \emph{Biometrical Journal}, \bold{40:8}, 899-909.
+
+Tryon, V. P., Hettmansperger, T. P. (1973). A class of nonparametric tests for homogeneity against ordered alternatives. \emph{Annals of Statistics}, \bold{1},  1061-1070.
  
 }
 
