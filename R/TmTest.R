@@ -47,8 +47,8 @@ V=0
 
 for (i in 1:(k-1)){
   Ic=combn(Is,i)
-  NIc<-rbind(unname(vector(mode="integer",length = choose(k,i))),Ic)
-  for (j in 1:k) ## for (j in l[i+1]:k)
+  NIc<-rbind(rep(0,ncol(Ic)),Ic)
+  for (j in 1:k)
   {
     V1=1
     I=!colSums(j==Ic)

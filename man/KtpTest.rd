@@ -11,9 +11,9 @@
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{formula}{a formula of the form \code{lhs ~ rhs} where \code{lhs} gives the sample values and \code{rhs} the corresponding groups.}
-  \item{data}{a data frame containing the variables in the formula \code{formula}} 
+  \item{data}{a data frame containing the variables in the formula \code{formula}}
   \item{alpha}{the level of significance to assess the statistical difference. Default is
-set to alpha = 0.05.} 
+set to alpha = 0.05.}
   \item{na.rm}{a logical value indicating whether NA values should be stripped before the computation proceeds.}
   \item{verbose}{a logical for printing output to R console.}
 
@@ -32,7 +32,7 @@ A list with class "owt" containing the following components:
 \item{variance}{the variance of the KTP test statistic.}
 \item{Z}{the standardized test statistic.}
 \item{p.value}{the p-value of the test.}
-\item{alpha}{the level of significance.} 
+\item{alpha}{the level of significance.}
 \item{method}{the character string "KTP".}
 \item{data}{a data frame containing the variables in which NA values (if exist) are removed.}
 \item{formula}{a formula of the form \code{lhs ~ rhs} where \code{lhs} gives the sample values and \code{rhs} the corresponding groups.}
@@ -45,7 +45,7 @@ A list with class "owt" containing the following components:
 Jonckheere, A. R. (1954). A Distribution-Free k-Sample Test Against Ordered Alternatives. \emph{Biometrika}, \bold{41}, 133-145.
 
 Terpstra, J., Chang, C.H., Magel, R.C. (2011). On the use of Spearman's correlation coefficient for testing ordered alternatives. \emph{Journal of Statistical Computation and Simulation}, \bold{81:11}, 1381-1392.
- 
+
 
 }
 
@@ -60,11 +60,8 @@ Bulent Altunkaynak}
 library(npordtests)
 
 ## Data from Jonckheere (1954)
-
-X<-as.factor(c(1,1,1,1,2,2,2,2,3,3,3,3,4,4,4,4))
-Y<-c(19,20,60,130,21,61,80,129,40,99,100,149,49,110,151,160)
-data<-cbind.data.frame(X,Y)
-KtpTest(Y~X,data)
+data(jdata)
+KtpTest(Y~X,jdata)
 
 }
 
